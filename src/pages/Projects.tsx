@@ -1,40 +1,33 @@
-import { projects } from "../data/projects";
-
 export default function Projects() {
   return (
-    <section className="grid gap-6">
-      <h2 className="text-2xl font-semibold">Projets</h2>
+    <section className="page">
+      <h1 className="page-title">Projets</h1>
+      <p className="page-text">
+        Voici quelques projets réalisés dans le cadre de mes études et de ma pratique.
+      </p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map(p => (
-          <article key={p.title} className="border rounded-2xl p-4 hover:shadow">
-            <h3 className="font-semibold">{p.title}</h3>
+      <div className="cards-grid">
+        <div className="card">
+          <h3>Portfolio React</h3>
+          <p>
+            Développement d’un portfolio moderne avec React et TypeScript.
+          </p>
+        </div>
 
-            <p className="text-sm text-muted-foreground">
-              {p.summary}
-            </p>
+        <div className="card">
+          <h3>Application de gestion</h3>
+          <p>
+            Application avec JSP, Servlet et Hibernate pour gérer des utilisateurs et produits.
+          </p>
+        </div>
 
-            <div className="mt-3 flex flex-wrap gap-2 text-xs">
-              {p.tags.map(t => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
-
-            <div className="mt-4 flex gap-3 text-sm">
-              {p.link && (
-                <a className="underline" href={p.link} target="_blank" rel="noreferrer">
-                  Demo
-                </a>
-              )}
-              {p.repo && (
-                <a className="underline" href={p.repo} target="_blank" rel="noreferrer">
-                  Code
-                </a>
-              )}
-            </div>
-          </article>
-        ))}
+        <div className="card">
+          <h3>Projet Spring Boot</h3>
+          <p>
+            API backend avec Spring Boot, JPA et MySQL pour la gestion de données.
+          </p>
+        </div>
       </div>
     </section>
-  );
+  )
 }

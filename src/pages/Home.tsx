@@ -1,34 +1,39 @@
-import { profile } from "../data/profile";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import reactLogo from '../assets/react.svg'
 
 export default function Home() {
   return (
-    <section className="grid gap-6 md:grid-cols-2 items-center">
-      <Helmet>
-        <title>{profile.name} — Portfolio</title>
-        <meta name="description" content="Portfolio : IA, SIG, DevSecOps, Android." />
-      </Helmet>
+    <section className="page">
+      <h1 className="page-title">Mon Portfolio</h1>
+      <p className="page-text">
+        Étudiante en informatique passionnée par le développement web,
+        les applications modernes et la création d’interfaces simples et élégantes.
+      </p>
 
-      <div>
-        <h1 className="text-4xl md:text-5xl font-bold">{profile.name}</h1>
-        <p className="mt-2 text-xl">{profile.role}</p>
+      <img src={reactLogo} alt="React Logo" className="hero-logo" />
 
-        <p className="mt-4 text-muted-foreground">{profile.about}</p>
-
-        <div className="mt-6 flex gap-3">
-          <Link to="/projects" className="underline">Voir les projets</Link>
-          <Link to="/contact" className="underline">Contact</Link>
+      <div className="cards-grid">
+        <div className="card">
+          <h3>Développement Web</h3>
+          <p>
+            Création d’interfaces modernes avec React, TypeScript et CSS.
+          </p>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2 text-sm" aria-label="badges de parcours">
-          REACT,
-          MYSQL ,
-          SPRING BOOT
+        <div className="card">
+          <h3>Backend</h3>
+          <p>
+            Réalisation d’API et d’applications avec Java, Spring Boot et MySQL.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3>Objectif</h3>
+          <p>
+            Développer mes compétences techniques à travers des projets académiques
+            et professionnels.
+          </p>
         </div>
       </div>
-
-      <div className="aspect-square rounded-2xl border" role="img" aria-label="illustration de profil" />
     </section>
-  );
+  )
 }
