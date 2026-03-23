@@ -1,4 +1,4 @@
-import { profile } from "@/data/profile";
+import { profile } from "../data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -12,10 +12,9 @@ export default function Home() {
 
       <div>
         <h1 className="text-4xl md:text-5xl font-bold">{profile.name}</h1>
-        <p className="mt-2 text-xl">{profile.role}
+        <p className="mt-2 text-xl">{profile.role}</p>
 
-        <p className="mt-4 text-muted-foreground">{profile.about}
-
+        <p className="mt-4 text-muted-foreground">{profile.about}</p>
 
         <div className="mt-6 flex gap-3">
           <Link to="/projects" className="underline">Voir les projets</Link>
@@ -23,8 +22,9 @@ export default function Home() {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2 text-sm" aria-label="badges de parcours">
-          Master IA (2025)
-          AWS SAA
+          REACT,
+          MYSQL ,
+          SPRING BOOT
         </div>
       </div>
 
